@@ -12,14 +12,19 @@
     "@types/react-dom": "^16.9.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-redux": "^7.1.3",
     "react-scripts": "3.3.0",
+    "redux": "^4.0.5",
+    "tailwindcss": "^1.2.0-canary.5",
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "craco eject",
+    "lint": "eslint src/ --ext .ts,.tsx --fix",
+    "commit": "git-cz"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,5 +40,30 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint"
+    }
+  },
+  "devDependencies": {
+    "@craco/craco": "^5.6.3",
+    "@fullhuman/postcss-purgecss": "^2.0.5",
+    "@types/react-redux": "^7.1.7",
+    "cssnano": "^4.1.10",
+    "customize-cra": "^0.9.1",
+    "cz-conventional-changelog": "^3.1.0",
+    "eslint": "^6.8.0",
+    "eslint-config-alloy": "^3.5.0",
+    "eslint-plugin-emotion": "^10.0.27",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-react-hooks": "^2.3.0",
+    "husky": "^4.2.1",
+    "redux-devtools": "^3.5.0"
   }
 }
